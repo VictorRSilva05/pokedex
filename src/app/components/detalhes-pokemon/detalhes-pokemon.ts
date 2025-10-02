@@ -5,10 +5,11 @@ import { DetalhesDoPokemon, SonsDoPokemon } from '../../models/pokemon';
 import { NgClass } from '@angular/common';
 import { mapeamentoDeCoresPorTipo } from '../../util/mapeamento-de-cores-por-tipo';
 import { converterParaTitleCase } from '../../util/converter-para-title-case';
+import { CardPokemon } from "../card-pokemon/card-pokemon";
 
 @Component({
   selector: 'app-detalhes-pokemon',
-  imports: [NgClass],
+  imports: [NgClass, CardPokemon],
   templateUrl: './detalhes-pokemon.html'
 })
 export class DetalhesPokemon implements OnInit {
@@ -41,7 +42,7 @@ export class DetalhesPokemon implements OnInit {
         obj.sprites.other["official-artwork"].front_default,
     ];
 
-     return { 
+     return {
       id: obj.id,
       nome: converterParaTitleCase(obj.name),
       urlSprite: obj.sprites.front_default,

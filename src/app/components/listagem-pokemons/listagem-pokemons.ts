@@ -5,15 +5,15 @@ import { mapeamentoDeCoresPorTipo } from '../../util/mapeamento-de-cores-por-tip
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { converterParaTitleCase } from '../../util/converter-para-title-case';
+import { CardPokemon } from "../card-pokemon/card-pokemon";
 
 @Component({
   selector: 'app-listagem-pokemons',
-  imports: [NgClass, RouterLink],
+  imports: [NgClass, RouterLink, CardPokemon],
   templateUrl: './listagem-pokemons.html'
 })
 export class ListagemPokemons implements OnInit{
 public pokemons: Pokemon[] = [];
-  public mapeamentoDeCoresPorTipo = mapeamentoDeCoresPorTipo;
 
   private readonly url: string = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -44,5 +44,5 @@ public pokemons: Pokemon[] = [];
       };
   }
 
- 
+
 }

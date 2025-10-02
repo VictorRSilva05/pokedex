@@ -7,7 +7,7 @@ import { DetalhesPokemon } from './components/detalhes-pokemon/detalhes-pokemon'
 const routes: Routes = [
   {path: '', redirectTo: 'pokemons', pathMatch: 'full'},
   {path: 'pokemons', component: ListagemPokemons},
-  {path: 'pokemons/id', component: DetalhesPokemon}
+  {path: 'pokemons/:id', component: DetalhesPokemon}
 ];
 
 export const appConfig: ApplicationConfig = {
