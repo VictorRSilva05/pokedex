@@ -5,7 +5,7 @@
 <div class="row g-3">
 
     <div class="col-lg-4">
-        <app-card-pokemon [pokemon]="detalhesDoPokemon"></app-card-pokemon>
+        <app-card-pokemon [pokemon]="detalhesDoPokemon" (statusFavoritoAlterado)="alternarStatusPokemon($event)"></app-card-pokemon>
     </div>
 
     <div class="col">
@@ -51,21 +51,22 @@
                                 <th class="ps-3">Antigo</th>
                             </tr>
                         </thead>
-
+                        @if(detalhesDoPokemon){
                         <tbody>
                             <tr>
                                 <td>
                                     <audio controls class="mt-2" style="height: 40px; max-width: 180px;">
-                                        <source [src]="detalhesDoPokemon?.sons?.atual" type="audio/ogg">
+                                        <source [src]="detalhesDoPokemon.sons.atual" type="audio/ogg">
                                     </audio>
                                 </td>
                                 <td>
                                     <audio controls class="mt-2" style="height: 40px; max-width: 180px;">
-                                        <source [src]="detalhesDoPokemon?.sons?.antigo" type="audio/ogg">
+                                        <source [src]="detalhesDoPokemon.sons.antigo" type="audio/ogg">
                                     </audio>
                                 </td>
                             </tr>
                         </tbody>
+                      }
                     </table>
                 </div>
             </section>
